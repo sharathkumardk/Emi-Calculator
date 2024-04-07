@@ -6,5 +6,14 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'emi-calculator';
+  loanAmount: number = 200000;
+  tenure: number = 10;
+  interest: number = 5;
+  emi: number = 0;
+  cal() {
+    var outstandingAmount =
+      Number(this.loanAmount) +
+      Number(this.loanAmount * (this.interest / 100) * this.tenure);
+    this.emi = outstandingAmount / this.tenure;
+  }
 }
